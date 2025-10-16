@@ -24,6 +24,7 @@ As a clinical bioinformatician, one of the key skills required is creating and m
 
 At each deadline, you would need to have committed your updated pipeline to the Feedback branch and additionally provide some brief comments on what you did in the Pull Request in the Feedback branch.
 
+
 **Part 2** will involve the generation of a clinical report based on the fastq file, which you will be provided after the Week 7 lecture.
 
 This report is to be committed to the Main Branch by the Due Date as either part of README.md or as a separate PDF file in the repository.
@@ -39,5 +40,6 @@ Full marks for that week will be given for any reasonable attempt at building th
 ## Detailed instructions for Part 2
 
 TBC
+
 
 
