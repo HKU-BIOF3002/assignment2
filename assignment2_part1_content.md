@@ -23,7 +23,7 @@
 
 ## Pipeline architecture
 
-### [Part 1](./assignment2_part1_guideline.md)
+### [Part 1](./assignment2_part1_guideline.md#variant-calling-pipeline---section-1)
 
 - [Step 1: Adaptor and quality trimming](./assignment2_part1_guideline.md#step-1-adaptor-and-quality-trimming)
 - [Step 2: Alignment to reference genome](./assignment2_part1_guideline.md#step-2-alignment-to-reference-genome)
@@ -31,12 +31,12 @@
 - [Step 4: Base Quality Score Recalibration (BQSR)](./assignment2_part1_guideline.md#step-4-base-quality-score-recalibration-bqsr)
 - [Step 5: Quality control](./assignment2_part1_guideline.md#step-5-quality-control)
 
-### Part 2
+### [Part 2](./assignment2_part1_guideline.md#variant-calling-pipeline---section-2)
 
 - [Step 6: Variant calling using Mutect2](./assignment2_part1_guideline.md#step-6-variant-calling-using-mutect2)
 - [Step 7: Variant calling using VarScan](./assignment2_part1_guideline.md#step-7-variant-calling-using-varscan2)
 
-### Part 3
+### [Part 3](./assignment2_part1_guideline.md#variant-calling-pipeline---section-3)
 
 - [Step 8: Consensus variant calling](./assignment2_part1_guideline.md#step-8-consensus-variant-calling-mutect2--varscan)
 - [Step 9: Variant annotation](./assignment2_part1_guideline.md#step-9-variant-annotation)
