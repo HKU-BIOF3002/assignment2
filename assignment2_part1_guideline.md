@@ -22,9 +22,9 @@
 
 **Expected output**:
 
-- Trimmed FASTQ files: `assignment2_demo.R1_val_1.fq.gz`, `assignment2_demo.R2_val_2.fq.gz`
-- Trimming reports: `assignment2_demo.R1.fq.gz_trimming_report.txt`, `assignment2_demo.R2.fq.gz_trimming_report.txt`
-- FastQC reports: `assignment2_demo.R1_val_1_fastqc.zip`, `assignment2_demo.R1_val_1_fastqc.html`, `assignment2_demo.R2_val_2_fastqc.zip`, `assignment2_demo.R2_val_2_fastqc.html`
+- Trimmed FASTQ files: `${sample}.R1_val_1.fq.gz`, `${sample}.R2_val_2.fq.gz`
+- Trimming reports: `${sample}.R1.fq.gz_trimming_report.txt`, `${sample}.R2.fq.gz_trimming_report.txt`
+- FastQC reports: `${sample}.R1_val_1_fastqc.zip`, `${sample}.R1_val_1_fastqc.html`, `${sample}.R2_val_2_fastqc.zip`, `${sample}.R2_val_2_fastqc.html`
 
 ## Step 2: Alignment to reference genome
 
@@ -42,7 +42,7 @@
 
 **Expected output**:
 
-- Sorted aligned BAM file and its index file: `assignment2_demo.RG.bam`, `assignment2_demo.RG.bam.bai`
+- Sorted aligned BAM file and its index file: `${sample}.RG.bam`, `${sample}.RG.bam.bai`
 
 ## Step 3: Mark duplicates
 
@@ -57,8 +57,8 @@
 
 **Expected output**:
 
-- BAM file with duplicates marked and its index file: `assignment2_demo.MD.bam`, `assignment2_demo.MD.bam.bai` / `assignment2_demo.MD.bai`
-- Duplication metrics file: `assignment2_demo.MD.stat`
+- BAM file with duplicates marked and its index file: `${sample}.MD.bam`, `${sample}.MD.bam.bai` / `${sample}.MD.bai`
+- Duplication metrics file: `${sample}.MD.stat`
 
 ## Step 4: Base Quality Score Recalibration (BQSR)
 
@@ -71,7 +71,7 @@
 
 BQSR is a two-step process:
 
-1. Use `gatk BaseRecalibrator` to enerates recalibration table for Base Quality Score Recalibration (BQSR).
+1. Use `gatk BaseRecalibrator` to generate recalibration table for Base Quality Score Recalibration (BQSR).
 
    - Key parameters:
      - `--known-sites`: Databases of known polymorphic sites used to exclude regions around known polymorphisms from analysis.
@@ -83,7 +83,7 @@ BQSR is a two-step process:
 
 **Expected output**:
 
-- BAM file with base quality score recalibrated and its index file: `assignment2_demo.MD_BR.bam`, `assignment2_demo.MD_BR.bam.bai`/`assignment2_demo.MD_BR.bai`
+- BAM file with base quality score recalibrated and its index file: `${sample}.MD_BR.bam`, `${sample}.MD_BR.bam.bai`/`${sample}.MD_BR.bai`
 
 ## Step 5: Quality control
 
@@ -101,22 +101,22 @@ BQSR is a two-step process:
 **Expected output**:
 
 - `bamtools stats`:
-  - `assignment2_demo.QC.bamtools_stat.txt`
+  - `${sample}.QC.bamtools_stat.txt`
 - `gatk CollectMultipleMetrics`:
-  - `assignment2_demo.QC.multiple_metrics.alignment_summary_metrics`
-  - `assignment2_demo.QC.multiple_metrics.read_length_histogram.pdf`
-  - `assignment2_demo.QC.multiple_metrics.base_distribution_by_cycle_metrics`
-  - `assignment2_demo.QC.multiple_metrics.base_distribution_by_cycle.pdf`
-  - `assignment2_demo.QC.multiple_metrics.insert_size_metrics`
-  - `assignment2_demo.QC.multiple_metrics.insert_size_histogram.pdf`
-  - `assignment2_demo.QC.multiple_metrics.quality_by_cycle_metrics`
-  - `assignment2_demo.QC.multiple_metrics.quality_by_cycle.pdf`
-  - `assignment2_demo.QC.multiple_metrics.quality_distribution_metrics`
-  - `assignment2_demo.QC.multiple_metrics.quality_distribution.pdf`
+  - `${sample}.QC.multiple_metrics.alignment_summary_metrics`
+  - `${sample}.QC.multiple_metrics.read_length_histogram.pdf`
+  - `${sample}.QC.multiple_metrics.base_distribution_by_cycle_metrics`
+  - `${sample}.QC.multiple_metrics.base_distribution_by_cycle.pdf`
+  - `${sample}.QC.multiple_metrics.insert_size_metrics`
+  - `${sample}.QC.multiple_metrics.insert_size_histogram.pdf`
+  - `${sample}.QC.multiple_metrics.quality_by_cycle_metrics`
+  - `${sample}.QC.multiple_metrics.quality_by_cycle.pdf`
+  - `${sample}.QC.multiple_metrics.quality_distribution_metrics`
+  - `${sample}.QC.multiple_metrics.quality_distribution.pdf`
 - `gatk CollectReadCounts`
-  - `assignment2_demo.QC.read_counts.tsv`
+  - `${sample}.QC.read_counts.tsv`
 - `gatk CollectHsMetrics`
-  - `assignment2_demo.QC.hs_metrics.txt`
+  - `${sample}.QC.hs_metrics.txt`
 
 # Variant calling pipeline - Section 2
 
@@ -139,16 +139,16 @@ BQSR is a two-step process:
 **Expected output**:
 
 - `gatk Mutect2`
-  - `assignment2_demo.Mutect2.f1r2.tar.gz`
-  - `assignment2_demo.Mutect2.unfiltered.vcf`
+  - `${sample}.Mutect2.f1r2.tar.gz`
+  - `${sample}.Mutect2.unfiltered.vcf`
 - `gatk LearnReadOrientationModel`
-  - `assignment2_demo.Mutect2.read-orientation-model.tar.gz`
+  - `${sample}.Mutect2.read-orientation-model.tar.gz`
 - `gatk GetPileupSummaries`
-  - `assignment2_demo.Mutect2.getpileupsummaries.table`
+  - `${sample}.Mutect2.getpileupsummaries.table`
 - `gatk CalculateContamination`
-  - `assignment2_demo.Mutect2.calculatecontamination.table`
+  - `${sample}.Mutect2.calculatecontamination.table`
 - `gatk FilterMutectCalls`
-  - `assignment2_demo.Mutect2.filter1.vcf`
+  - `${sample}.Mutect2.filter1.vcf`
 
 ### Filtering Mutect2 results
 
@@ -167,9 +167,9 @@ BQSR is a two-step process:
 **Expected output**:
 
 - `bcftools norm`
-  - `assignment2_demo.Mutect2.filter1.norm.vcf.gz`
+  - `${sample}.Mutect2.filter1.norm.vcf.gz` with corresponding `.tbi` index
 - `bcftools filter`
-  - `assignment2_demo.Mutect2.final.vcf.gz`
+  - `${sample}.Mutect2.final.vcf.gz` with corresponding `.tbi` index
 
 ## Step 7: Variant calling using VarScan2
 
@@ -185,14 +185,15 @@ BQSR is a two-step process:
 **Implementation guide**:
 
 - Perform VarScan2 variant calling on SNP and indel in accordance with Week 7 instructions
+- Use tabix to index the resulting VCF files
 
 **Expected output**:
 
 - `samtools mpileup`
 - `java -jar /software/VarScan/2.4.2/VarScan.jar mpileup2snp`
-  - `assignment2_demo.varscan.snp.vcf.gz`
+  - `${sample}.varscan.snp.vcf.gz` with corresponding `.tbi` index
 - `java -jar /software/VarScan/2.4.2/VarScan.jar mpileup2indel`
-  - `assignment2_demo.varscan.indel.vcf.gz`
+  - `${sample}.varscan.indel.vcf.gz` with corresponding `.tbi` index
 
 ### Normalizing VarScan2 results
 
@@ -209,8 +210,8 @@ BQSR is a two-step process:
 **Expected output**:
 
 - `bcftools norm`
-  - `assignment2_demo.varscan.snp.norm.vcf.gz`
-  - `assignment2_demo.varscan.indel.norm.vcf.gz`
+  - `${sample}.varscan.snp.norm.vcf.gz` with corresponding `.tbi` index
+  - `${sample}.varscan.indel.norm.vcf.gz` with corresponding `.tbi` index
 
 # Variant calling pipeline - Section 3
 
@@ -231,6 +232,11 @@ Mutect2 outputs a VCF with many INFO fields and data fields. We will create a si
 - **GT**: genotype
 - **AD**: allele depth (reference depth, alternate depth).
 
+**Tools**:
+
+`bcftools annotate`
+`tabix`
+
 **Implementation guide**:
 
 - Use `bcftools annotate -x` to remove all **INFO** fields and keep only **GT** and **AD** format fields.
@@ -244,15 +250,20 @@ Mutect2 outputs a VCF with many INFO fields and data fields. We will create a si
 Example VCF data line:
 
    ```text
-   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo
+   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  ${sample}
    chr1    114716123       .       C       T       .       PASS    .       GT:AD   0|1:413,11
    ```
 
 ### Step 8.1.2: Rename sample in VCF header
 
-Rename the sample in VCF header to identify Mutect2 calls after merging.
+**Tools**:
+
+`bcftools reheader`
+`tabix`
 
 **Implementation guide**:
+
+Rename the sample in VCF header to identify Mutect2 calls after merging.
 
 - Use `bcftools reheader` to rename the sample.
 - The new name shoule be `${sample}_Mutect2`.
@@ -265,7 +276,7 @@ Rename the sample in VCF header to identify Mutect2 calls after merging.
 Example VCF data file:
 
    ```text
-   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo_Mutect2
+   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  ${sample}_Mutect2
    chr1    114716123       .       C       T       .       PASS    .       GT:AD   0|1:413,11
    ```
 
@@ -273,15 +284,22 @@ Example VCF data file:
 
 ### Step 8.2.1 Extract RD(ref depth) and AD (allele depth) from VCF, and convert it to match Mutect2's AD format structure
 
-VarScan outputs a VCF with many INFO fields and data fields. For ensemble calling, we need:
+**Tools**:
+
+`bcftools view`
+`bcftools query`
+`bgzip`
+`tabix`
+
+**Implementation guide**:
+
+VarScan outputs a VCF with many INFO fields and data fields. For ensemble variant calling, we need:
 
 - **GT**: genotype
 - **RD**: reference depth
 - **AD**: alternate depth
 
 Note that the VCF from Mutect2 and VarScan have different representation for reference depth and alternate depth. We will convert VarScan's output to match Mutect2's AD format structure.
-
-**Implementation guide**:
 
 - a) Create minimal header file from the Mutect2 VCF
   - Use `bcftools view -h` and `grep` to extract:
@@ -311,7 +329,7 @@ Repeat step b and c for indel data.
 Example data lines:
 
    ```text
-   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo
+   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  ${sample}
    chr11   118480320       .       CT      C       .       PASS    .       GT:AD   0/1:217,9
    ```
 
@@ -332,7 +350,7 @@ Rename the sample in VCF header to identify VarScan calls after merging.
 Example data line:
 
   ```text
-  #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo_VarScan_snp
+  #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  ${sample}_VarScan_snp
   chr1    36473693        .       T       C       .       PASS    .       GT:AD   1/1:0,432
   ```
 
@@ -341,15 +359,20 @@ Example data line:
 Example data line:
 
    ```text
-   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo_VarScan_indel
+   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  ${sample}_VarScan_indel
    chr11   118480320       .       CT      C       .       PASS    .       GT:AD   0/1:217,9
    ```
 
 ### Step 8.3: Merge formatted VCF from Mutect2 and VarScan
 
-Build a VCF containing variants from all variant callers.
+**Tools**:
+
+`bcftoosl merge`
+`tabix`
 
 **Implementation guide**:
+
+Build a VCF containing variants from all variant callers.
 
 - Use `bcftools merge` to combine formatted Mutect2, VarScan SNP and VarScan indel calls.
 - Option `-m none` to avoid multiallelic record is suggested.
@@ -363,26 +386,30 @@ Build a VCF containing variants from all variant callers.
 Example output VCF for ensemble variant calling:
 
    ```text
-   #CHROM  POS       ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo_Mutect2      assignment2_demo_VarScan_snp  assignment2_demo_VarScan_indel
+   #CHROM  POS       ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  ${sample}_Mutect2      ${sample}_VarScan_snp  ${sample}_VarScan_indel
    chr1    36473693  .       T       C       .       PASS    .       GT:AD   ./.:.                    1/1:0,432              ./.:.
    chr1    43338496  .       G       A       .       PASS    .       GT:AD   ./.:.                    0/1:160,142            ./.:.
    ```
 
 # Variant annotation
 
-We will annotate our ensemble variants using **snpEff** and **ANNOVAR**.
+We will annotate our consensus variants using **snpEff** and **ANNOVAR**.
 
 ## Step 9: Variant annotation
 
 ### Step 9.1: snpEff
 
-Before starting, load the required modulues:
+Before starting, load the required modules:
 
 ### Step 9.1.1: Run snpEff annotations
 
-Annotate variants with snpEff.
+**Tools**:
+
+`snpEff`
 
 **Implementation guide**:
+
+Annotate variants with snpEff.
 
 - Run `snpEff` on the merged VCF file using `java -jar  /software/snpEff/5.1/snpEff.jar` with appropriate parameters.
   - Key parameters:
@@ -397,11 +424,15 @@ Annotate variants with snpEff.
 
 ### Step 9.1.2:Extract key snpEff annotations
 
-Create a tab-delimited file with specific annotation fields from snpEff.
+**Tools**:
+
+`SnpSift.jar extractFields`
 
 **Implementation guide**:
 
-- SnpSift `extractFields` can extract specific ANN fields.
+Create a tab-delimited file with specific annotation fields from snpEff.
+
+- SnpSift `extractFields` can extract specific ANN fields. Run SnpSift using `java -jar`.
   - Handle missing values using `-e "."`.
   - The `-s ","` parameter helps with field separation.
   - Fields to extract:
@@ -412,6 +443,7 @@ Create a tab-delimited file with specific annotation fields from snpEff.
     - HGVS_P
 
 **Expected output**: `${sample}.snpEff.txt`
+
 Example data:
 
 ```text
@@ -423,9 +455,13 @@ chr12   22661102        .       A       G       ETNK1,ETNK1     NM_018638.4,NM_0
 
 ### Step 9.2: ANNOVAR
 
-Annotate variants with multiple databases using ANNOVAR.
+**Tools**:
+
+`table_annovar.pl`
 
 **Implementation guide**:
+
+Annotate variants with multiple databases using ANNOVAR.
 
 - Load the required module: `module load ANNOVAR/2020Jun08`
 - Run `table_annovar.pl` on the merged VCF
@@ -442,7 +478,7 @@ Annotate variants with multiple databases using ANNOVAR.
 - `${sample}.hg38_multianno.vcf`
 - `${sample}.hg38_multianno.txt`
 
-### Step 9.3: Merge annotations from snpEff and ANNOVAR (Optional?)
+### Step 9.3: Merge annotations from snpEff and ANNOVAR
 
 **Script**:
 
