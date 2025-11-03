@@ -7,7 +7,7 @@
 5. [Quality control](#step-5-quality-control)
 6. [Variant calling using Mutect2](#step-6-variant-calling-using-mutect2)
 7. [Variant calling using VarScan2](#step-7-variant-calling-using-varscan2)
-8. [Ensemble variant calling](#step-8-consensus-variant-calling-mutect2--varscan)
+8. [Ensemble variant calling](#step-8-ensemble-variant-calling-mutect2--varscan)
 9. [Variant annotation](#step-9-variant-annotation)
 
 # Variant calling pipeline - Section 1
@@ -214,11 +214,11 @@ BQSR is a two-step process:
 
 # Variant calling pipeline - Section 3
 
-# Consensus variant calling
+# Ensemble variant calling
 
-## Step 8: Consensus variant calling (Mutect2 + VarScan)
+## Step 8: Ensemble variant calling (Mutect2 + VarScan)
 
-**Overview**: We will generate a **consensus variant call** set by merging results from **Mutect2** and **VarScan**. You will standardize VCF formats from both callers and then combine them info a single file for downstream analysis.
+**Overview**: We will generate a **ensemble variant call** set by merging results from **Mutect2** and **VarScan**. You will standardize VCF formats from both callers and then combine them info a single file for downstream analysis.
 
 We will use `bcftools` for manipulating VCF files and `tabix` for indexing VCF files. Before starting, load these modules:
 
@@ -273,7 +273,7 @@ Example VCF data file:
 
 ### Step 8.2.1 Extract RD(ref depth) and AD (allele depth) from VCF, and convert it to match Mutect2's AD format structure
 
-VarScan outputs a VCF with many INFO fields and data fields. For consensus calling, we need:
+VarScan outputs a VCF with many INFO fields and data fields. For ensemble calling, we need:
 
 - **GT**: genotype
 - **RD**: reference depth
@@ -360,7 +360,7 @@ Build a VCF containing variants from all variant callers.
 
 - `${sample}.merged.vcf.gz` with corresponding `.tbi` index
 
-Example output VCF for consensus variant calling:
+Example output VCF for ensemble variant calling:
 
    ```text
    #CHROM  POS       ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  21H2000158_Mutect2      21H2000158_VarScan_snp  21H2000158_VarScan_indel
@@ -370,7 +370,7 @@ Example output VCF for consensus variant calling:
 
 # Variant annotation
 
-We will annoate our consensus variants using **snpEff** and **ANNOVAR**.
+We will annotate our ensemble variants using **snpEff** and **ANNOVAR**.
 
 ## Step 9: Variant annotation
 

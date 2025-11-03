@@ -38,5 +38,5 @@
 
 ### [Part 3](./assignment2_part1_guideline.md#variant-calling-pipeline---section-3)
 
-- [Step 8: Consensus variant calling](./assignment2_part1_guideline.md#step-8-consensus-variant-calling-mutect2--varscan)
+- [Step 8: Ensemble variant calling](./assignment2_part1_guideline.md#step-8-ensemble-variant-calling-mutect2--varscan)
 - [Step 9: Variant annotation](./assignment2_part1_guideline.md#step-9-variant-annotation)
