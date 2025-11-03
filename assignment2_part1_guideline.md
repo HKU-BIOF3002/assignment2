@@ -5,6 +5,10 @@
 3. [Mark duplicates](#step-3-mark-duplicates)
 4. [Base quality score recalibration](#step-4-base-quality-score-recalibration-bqsr)
 5. [Quality control](#step-5-quality-control)
+6. [Variant calling using Mutect2](#step-6-variant-calling-using-mutect2)
+7. [Variant calling using VarScan2](#step-7-variant-calling-using-varscan2)
+8. [Ensemble variant calling](#step-8-consensus-variant-calling-mutect2--varscan)
+9. [Variant annotation](#step-9-variant-annotation)
 
 ## Step 1: Adaptor and quality trimming
 
@@ -444,4 +448,3 @@ Annotate variants with multiple databases using ANNOVAR.
 source /home/groups/biof3002/variant_calling/env/py3.9/bin/activate
 python $(dirname $0)/merge_annotation.py ${sample}.snpEff.txt  ${sample}.hg38_multianno.txt  > ${sample}.snpEff_annovar.txt
 ```
-
