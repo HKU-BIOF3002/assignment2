@@ -10,6 +10,8 @@
 8. [Ensemble variant calling](#step-8-ensemble-variant-calling-mutect2--varscan)
 9. [Variant annotation](#step-9-variant-annotation)
 
+**Important: Note that the provided reference files in this assignment are abridged versions, so do not use the reference files for analysis apart from this assignment.**
+
 # Variant calling pipeline - Section 1
 
 ## Step 1: Adaptor and quality trimming
@@ -266,7 +268,7 @@ Example VCF data line:
 Rename the sample in VCF header to identify Mutect2 calls after merging.
 
 - Use `bcftools reheader` to rename the sample.
-- The new name shoule be `${sample}_Mutect2`.
+- The new name should be `${sample}_Mutect2`.
 - Index the renamed file.
 
 **Expected output**:
@@ -367,7 +369,7 @@ Example data line:
 
 **Tools**:
 
-`bcftoosl merge`
+`bcftools merge`
 `tabix`
 
 **Implementation guide**:
@@ -422,7 +424,7 @@ Annotate variants with snpEff.
 - Annotated VCF: `${sample}.snpEff.vcf.gz`
 - Statistics output: `${sample}.snpEff.stat.html`
 
-### Step 9.1.2:Extract key snpEff annotations
+### Step 9.1.2: Extract key snpEff annotations
 
 **Tools**:
 

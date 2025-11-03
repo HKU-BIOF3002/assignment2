@@ -35,7 +35,7 @@ If you make further commits to the repository after the due date, a late penalty
 
 During the lecture/workshops from Week 5 to Week 9, you would have gone through the key steps for NGS-based variant calling. Your task is to distill the steps shown and discussed in the lectures and code this into a single shell script. A skeleton shell script `NGS_pipeline.sh` has been provided for you, and you are to update and commit this script on the respective due dates, based on the demonstration fastq files, i.e. `assignment2_demo.R1.fq.gz` and `assignment2_demo.R2.fq.gz`, from a patient with acute myeloid leukaemia. As such, for the first commit (7th Nov), you are to implement the pipeline for NGS alignment, BAM preparation and alignment metrics generation based on what was taught in Week 5 (for short read NGS alignment), etc.
 
-Detailed instructions for Part 1 can be found in this [guideline](./assignment2_part1_guideline.md). The location of the fastq files for demo practice and the reference files are listed in this [webpage](./assignment2_part1_content.md) for your easy reference.
+Detailed instructions for Part 1 can be found in this [guideline](./assignment2_part1_guideline.md). The location of the fastq files for demo practice and the reference files are listed in this [webpage](./assignment2_part1_content.md) for your easy reference. **Please note that the provided reference files in this assignment are abridged versions, so do not use the reference files for analysis apart from this assignment.**
 
 Full marks for that week will be given for any reasonable attempt at building a functional bioinformatic pipeline for that week. We will provide feedback (if necessary) to correct/improve your pipeline.
 
