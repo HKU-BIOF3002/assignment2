@@ -244,7 +244,7 @@ Mutect2 outputs a VCF with many INFO fields and data fields. We will create a si
 Example VCF data line:
 
    ```text
-   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  21H2000158
+   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo
    chr1    114716123       .       C       T       .       PASS    .       GT:AD   0|1:413,11
    ```
 
@@ -265,7 +265,7 @@ Rename the sample in VCF header to identify Mutect2 calls after merging.
 Example VCF data file:
 
    ```text
-   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  21H2000158_Mutect2
+   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo_Mutect2
    chr1    114716123       .       C       T       .       PASS    .       GT:AD   0|1:413,11
    ```
 
@@ -311,7 +311,7 @@ Repeat step b and c for indel data.
 Example data lines:
 
    ```text
-   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  21H2000158
+   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo
    chr11   118480320       .       CT      C       .       PASS    .       GT:AD   0/1:217,9
    ```
 
@@ -332,7 +332,7 @@ Rename the sample in VCF header to identify VarScan calls after merging.
 Example data line:
 
   ```text
-  #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  21H2000158_VarScan_snp
+  #CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo_VarScan_snp
   chr1    36473693        .       T       C       .       PASS    .       GT:AD   1/1:0,432
   ```
 
@@ -341,7 +341,7 @@ Example data line:
 Example data line:
 
    ```text
-   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  21H2000158_VarScan_indel
+   #CHROM  POS             ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo_VarScan_indel
    chr11   118480320       .       CT      C       .       PASS    .       GT:AD   0/1:217,9
    ```
 
@@ -363,7 +363,7 @@ Build a VCF containing variants from all variant callers.
 Example output VCF for ensemble variant calling:
 
    ```text
-   #CHROM  POS       ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  21H2000158_Mutect2      21H2000158_VarScan_snp  21H2000158_VarScan_indel
+   #CHROM  POS       ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  assignment2_demo_Mutect2      assignment2_demo_VarScan_snp  assignment2_demo_VarScan_indel
    chr1    36473693  .       T       C       .       PASS    .       GT:AD   ./.:.                    1/1:0,432              ./.:.
    chr1    43338496  .       G       A       .       PASS    .       GT:AD   ./.:.                    0/1:160,142            ./.:.
    ```
