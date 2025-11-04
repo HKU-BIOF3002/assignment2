@@ -5,6 +5,9 @@
 - FASTQ for Part 1 (Read1): `/home/groups/biof3002/assignment2/fastq/assignment2_demo.R1.fq.gz`
 - FASTQ for Part 1 (Read2): `/home/groups/biof3002/assignment2/fastq/assignment2_demo.R2.fq.gz`
 
+- FASTQ for Part 2 (Read1): `/home/groups/biof3002/assignment2/fastq/assignment2_aml.R1.fq.gz`
+- FASTQ for Part 2 (Read2): `/home/groups/biof3002/assignment2/fastq/assignment2_aml.R2.fq.gz`
+
 ## Reference files
 
 - Reference genome (hg38): `/home/groups/biof3002/week9/ref/reference_genome/hg38/hg38.fa`
