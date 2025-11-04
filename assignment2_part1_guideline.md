@@ -439,6 +439,9 @@ Create a tab-delimited file with specific annotation fields from snpEff.
   - The `-s ","` parameter helps with field separation.
   - Fields to extract:
     - Standand VCF fields (CHROM, POS, ID, REF, ALT)
+    - Allele depth in the genotype field of "${sample}_Mutect2"
+    - Allele depth in the genotype field of "${sample}_VarScan_snp"
+    - Allele depth in the genotype field of "${sample}_VarScan_indel"
     - GENE
     - FEATUREID
     - HGVS_C
