@@ -2,8 +2,8 @@
 
 ## Input data files
 
-- FASTQ (Read1): `/home/groups/biof3002/assignment2/fastq/assignment2_demo.R1.fq.gz`
-- FASTQ (Read2): `/home/groups/biof3002/assignment2/fastq/assignment2_demo.R2.fq.gz`
+- FASTQ for Part 1 (Read1): `/home/groups/biof3002/assignment2/fastq/assignment2_demo.R1.fq.gz`
+- FASTQ for Part 1 (Read2): `/home/groups/biof3002/assignment2/fastq/assignment2_demo.R2.fq.gz`
 
 ## Reference files
 
