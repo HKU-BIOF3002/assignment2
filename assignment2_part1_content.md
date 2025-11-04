@@ -7,19 +7,19 @@
 
 ## Reference files
 
-- Reference genome (hg38): `/home/groups/biof3002/week5/ref/reference_genome/hg38/hg38.fa`
-- Target regions: `interval_list=/home/groups/biof3002/week5/ref/targets/targets.hg38.interval_list`
+- Reference genome (hg38): `/home/groups/biof3002/week9/ref/reference_genome/hg38/hg38.fa`
+- Target regions: `interval_list=/home/groups/biof3002/week9/ref/targets/targets.hg38.interval_list`
 - Databases of known polymorphic sites for `gatk BaseRecalibrator`
-  - `known_snp=/home/groups/biof3002/week5/ref/gatk/Homo_sapiens_assembly38.dbsnp138.vcf`
-  - `known_indel=/home/groups/biof3002/week5/ref/gatk/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz`
+  - `known_snp=/home/groups/biof3002/week9/ref/gatk/Homo_sapiens_assembly38.dbsnp138.vcf`
+  - `known_indel=/home/groups/biof3002/week9/ref/gatk/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz`
 - Databases for GATK Mutect2:
-  - `germline_resource=/home/groups/biof3002/week5/ref/gatk/af-only-gnomad.hg38.vcf.gz` #Mutect2
-  - `variant_vcf=/home/groups/biof3002/week5/ref/gatk/small_exac_common_3.hg38.vcf.gz` #Mutect2 GetPileupSummaries
+  - `germline_resource=/home/groups/biof3002/week9/ref/gatk/af-only-gnomad.hg38.vcf.gz` #Mutect2
+  - `variant_vcf=/home/groups/biof3002/week9/ref/gatk/small_exac_common_3.hg38.vcf.gz` #Mutect2 GetPileupSummaries
 - Database for snpEff:
-  - `snpEff_config=/home/groups/biof3002/ref/annotation/snpEff/snpEff.config`
-  - `snpEff_db=/home/groups/biof3002/ref/annotation/snpEff/data/`
+  - `snpEff_config=/home/groups/biof3002/week9/ref/annotation/snpEff/snpEff.config`
+  - `snpEff_db=/home/groups/biof3002/week9/ref/annotation/snpEff/data/`
 - Database for ANNOVAR:
-  - `annovar_db=/home/groups/biof3002/ref/annotation/ANNOVAR/humandb/`
+  - `annovar_db=/home/groups/biof3002/week9/ref/annotation/ANNOVAR/humandb/`
 
 ## Software versions
 
