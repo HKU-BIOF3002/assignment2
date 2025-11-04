@@ -485,6 +485,6 @@ Annotate variants with multiple databases using ANNOVAR.
 **Script**:
 
 ```bash
-source /home/groups/biof3002/variant_calling/env/py3.9/bin/activate
+source /home/groups/biof3002/week9/env/py3.9/bin/activate
 python $(dirname $0)/merge_annotation.py ${sample}.snpEff.txt  ${sample}.hg38_multianno.txt  > ${sample}.snpEff_annovar.txt
 ```
