@@ -24,21 +24,6 @@
 - Database for ANNOVAR:
   - `annovar_db=/home/groups/biof3002/week9/ref/annotation/ANNOVAR/humandb/`
 
-## Software versions
-
-```bash
-module load ANNOVAR/2020Jun08
-module load bamtools/2.5.1
-module load bcftools/1.20 tabix/1.13
-module load bwa/0.7.17
-module load cutadapt/1.8.1
-module load FastQC/0.12.1
-module load gatk/4.6.0.0
-module load java/12.0.2 snpEff/5.1 tabix/1.13
-module load samtools/1.20
-module load samtools/1.20 java/8.0_161 VarScan/2.4.2 tabix/1.13
-module load TrimGalore/0.4.5
-```
 
 ## Pipeline architecture
 
