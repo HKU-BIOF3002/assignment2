@@ -225,6 +225,10 @@ BQSR is a two-step process:
 
 We will use `bcftools` for manipulating VCF files and `tabix` for indexing VCF files. Before starting, load these modules:
 
+```bash
+module load BCFtools/1.18-GCC-12.3.0 tabix/0.2.6-GCCcore-12.3.0
+```
+
 ## Step 8.1: Format VCF from Mutect2
 
 ### Step 8.1.1: Extract GT and AD fields
@@ -403,6 +407,10 @@ We will annotate our consensus variants using **snpEff** and **ANNOVAR**.
 
 Before starting, load the required modules:
 
+```bash
+module load snpEff/5.4c-GCCcore-13.3.0-Java-21
+```
+
 ### Step 9.1.1: Run snpEff annotations
 
 **Tools**:
@@ -460,6 +468,13 @@ chr12   22661102        .       A       G       ETNK1,ETNK1     NM_018638.4,NM_0
 
 ### Step 9.2: ANNOVAR
 
+Before starting, load the required modules:
+
+```bash
+module load ANNOVAR/20250302-GCCcore-13.2.0
+```
+
+
 **Tools**:
 
 `table_annovar.pl`
@@ -468,7 +483,6 @@ chr12   22661102        .       A       G       ETNK1,ETNK1     NM_018638.4,NM_0
 
 Annotate variants with multiple databases using ANNOVAR.
 
-- Load the required module: `module load ANNOVAR/2020Jun08`
 - Run `table_annovar.pl` on the merged VCF
   - Database to include: refGene,cytoBand,avsnp150,esp6500siv2_all,ALL.sites.2015_08,AFR.sites.2015_08,AMR.sites.2015_08,EAS.sites.2015_08,EUR.sites.2015_08,SAS.sites.2015_08,exac03nontcga,gnomad30_genome,clinvar_20250721,intervar_20180118,kaviar_20150923,dbnsfp35a,dbscsnv11,hrcr1,regsnpintron,cosmic92
   - Database directory: `${annovar_db}`
@@ -488,6 +502,11 @@ Annotate variants with multiple databases using ANNOVAR.
 **Script**:
 
 ```bash
-source /home/groups/biof3002/week9/env/py3.9/bin/activate
+module load Miniconda3/25.7.0-2
+eval "$(conda shell.bash hook)"
+set +u
+conda activate /home/groups/biof3002/envs/python3.14
+set -u
+
 python $(dirname $0)/merge_annotation.py ${sample}.snpEff.txt  ${sample}.hg38_multianno.txt  > ${sample}.snpEff_annovar.txt
 ```
