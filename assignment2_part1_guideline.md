@@ -77,7 +77,7 @@ BQSR is a two-step process:
 
    - Key parameters:
      - `--known-sites`: Databases of known polymorphic sites used to exclude regions around known polymorphisms from analysis.
-       - Suggested databases: `/home/groups/biof3002/week5/ref/gatk/Homo_sapiens_assembly38.dbsnp138.vcf` and `/home/groups/biof3002/week5/ref/gatk/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz`
+       - Suggested databases: `/home/groups/biof3002/week9/ref/gatk/Homo_sapiens_assembly38.dbsnp138.vcf` and `/home/groups/biof3002/week9/ref/gatk/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz`
      - `--interval-padding` or `-ip`: Amount of padding (in bp) to add to each interval you are including.
        - Suggested value: 10
 
@@ -180,8 +180,8 @@ BQSR is a two-step process:
 **Tools**:
 
 - `samtools mpileup`
-- `java -jar /software/VarScan/2.4.2/VarScan.jar mpileup2snp`
-- `java -jar /software/VarScan/2.4.2/VarScan.jar mpileup2indel`
+- `varscan mpileup2snp`
+- `varscan mpileup2indel`
 - `tabix`
 
 **Implementation guide**:
@@ -421,7 +421,7 @@ module load snpEff/5.4c-GCCcore-13.3.0-Java-21
 
 Annotate variants with snpEff.
 
-- Run `snpEff` on the merged VCF file using `java -jar  /software/snpEff/5.1/snpEff.jar` with appropriate parameters.
+- Run `snpEff` on the merged VCF file with appropriate parameters.
   - Key parameters:
     - Custom database: `hg38_biof3002_32genes_MANE_RefSeq`
     - Configuration file: `${snpEff_config}`
@@ -436,13 +436,13 @@ Annotate variants with snpEff.
 
 **Tools**:
 
-`SnpSift.jar extractFields`
+`snpSift extractFields`
 
 **Implementation guide**:
 
 Create a tab-delimited file with specific annotation fields from snpEff.
 
-- SnpSift `extractFields` can extract specific ANN fields. Run SnpSift using `java -jar`.
+- `snpSift extractFields` can extract specific ANN fields.
   - Handle missing values using `-e "."`.
   - The `-s ","` parameter helps with field separation.
   - Fields to extract:
