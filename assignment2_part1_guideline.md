@@ -16,6 +16,10 @@
 
 ## Step 1: Adaptor and quality trimming
 
+```bash
+module load Trim_Galore/0.6.11-GCCcore-13.3.0
+```
+
 **Tools**:
 
 - Trim_Galore (automate Cutadapt and FastQC)
@@ -29,6 +33,11 @@
 - FastQC reports: `${sample}.R1_val_1_fastqc.zip`, `${sample}.R1_val_1_fastqc.html`, `${sample}.R2_val_2_fastqc.zip`, `${sample}.R2_val_2_fastqc.html`
 
 ## Step 2: Alignment to reference genome
+
+```bash
+module load BWA/0.7.18-GCCcore-13.3.0
+module load SAMtools/1.21-GCC-13.3.0
+```
 
 **Tools**:
 
@@ -48,6 +57,10 @@
 
 ## Step 3: Mark duplicates
 
+```bash
+module load GATK/4.3.0.0-GCCcore-12.3.0-Java-11
+```
+
 **Tools**:
 
 - MarkDuplicates (Picard)
@@ -63,6 +76,10 @@
 - Duplication metrics file: `${sample}.MD.stat`
 
 ## Step 4: Base Quality Score Recalibration (BQSR)
+
+```bash
+module load GATK/4.3.0.0-GCCcore-12.3.0-Java-11
+```
 
 **Tools**:
 
@@ -88,6 +105,12 @@ BQSR is a two-step process:
 - BAM file with base quality score recalibrated and its index file: `${sample}.MD_BR.bam`, `${sample}.MD_BR.bam.bai`/`${sample}.MD_BR.bai`
 
 ## Step 5: Quality control
+
+```bash
+module load GATK/4.3.0.0-GCCcore-12.3.0-Java-11
+module load BamTools/2.5.2-GCC-12.3.0
+module load R/4.3.2-gfbf-2023a
+```
 
 **Tools**:
 
@@ -126,6 +149,10 @@ BQSR is a two-step process:
 
 ### Variant calling using Mutect2
 
+```bash
+module load GATK/4.3.0.0-GCCcore-12.3.0-Java-11
+```
+
 **Tools**:
 
 - `gatk Mutect2`
@@ -154,6 +181,11 @@ BQSR is a two-step process:
 
 ### Filtering Mutect2 results
 
+```bash
+module load BCFtools/1.18-GCC-12.3.0
+module load tabix/0.2.6-GCCcore-12.3.0
+```
+
 **Tools**:
 
 - `bcftools norm`
@@ -177,6 +209,12 @@ BQSR is a two-step process:
 
 ### Variant calling using VarScan2
 
+```bash
+module load VarScan/2.4.6-Java-11
+module load SAMtools/1.21-GCC-13.3.0
+module load tabix/0.2.6-GCCcore-12.3.0
+```
+
 **Tools**:
 
 - `samtools mpileup`
@@ -198,6 +236,10 @@ BQSR is a two-step process:
   - `${sample}.varscan.indel.vcf.gz` with corresponding `.tbi` index
 
 ### Normalizing VarScan2 results
+
+```bash
+module load BCFtools/1.18-GCC-12.3.0 tabix/0.2.6-GCCcore-12.3.0
+```
 
 **Tools**:
 
