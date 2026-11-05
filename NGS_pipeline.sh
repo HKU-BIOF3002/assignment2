@@ -27,7 +27,7 @@ fasta=$2
 #CPU=                                      #threads to use
 
 #---------------------------------------------------------------------
-# Section 1: Trim, alignment, mark duplicates, BQSR, QC (Due 7th Nov)
+# Section 1: Trim, alignment, mark duplicates, BQSR, QC
 #---------------------------------------------------------------------
 
 # --- Step 1: Adaptor and quality trimming ---"
@@ -53,7 +53,7 @@ fasta=$2
 
 
 #-----------------------------------------------------------
-# Section 2: Variant calling (Due 14th Nov)
+# Section 2: Variant calling
 #-----------------------------------------------------------
 
 # --- Step 6: Variant calling using Mutect2 ---
@@ -73,7 +73,7 @@ fasta=$2
 
 
 #---------------------------------------------------------------------------
-# Section 3: Ensemble variant calling and variant annotation (Due 21st Nov)
+# Section 3: Ensemble variant calling and variant annotation
 #---------------------------------------------------------------------------
 
 # --- Step 8: Ensemble variant calling ---
