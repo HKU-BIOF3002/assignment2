@@ -33,7 +33,7 @@ As a clinical bioinformatician, one of the key skills required is creating and m
 
 ## Submission Instructions
 
-**Part 1** will involve updating your pipeline over 3 weeks on the Feedback branch of your Assignment 2 GitHub repository.
+**Part 1** will involve updating your pipeline over 3 weeks on the "main" of your Assignment 2 GitHub repository.
 
 **Part 2** will involve the generation of a clinical report based on the fastq file, i.e. `assignment2_aml.R1.fq.gz` and `assignment2_aml.R2.fq.gz`, which will be provided to you after the Week 9 lecture.
 
